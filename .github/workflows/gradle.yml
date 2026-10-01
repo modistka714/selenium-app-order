@@ -22,7 +22,8 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Run SUT & Tests
-        run: |
-          java -jar ./artifacts/app-order.jar &
-          ./gradlew test
+      - name: Run SUT
+        run: java -jar ./artifacts/app-order.jar &
+
+      - name: Run Tests
+        run: ./gradlew test --info
